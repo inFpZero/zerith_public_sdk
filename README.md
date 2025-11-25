@@ -2,28 +2,36 @@
 ## Zerith SDK public repository for external development
 ```
 H1_SDK
-├── audio_sdk_py      #语音sdk
+├── audio_sdk_py      #语音sdk python版本
 │   ├── asr_test.py   #示例
 │   └── lib
 │       ├── __init__.py
 │       ├── robot_pb2_grpc.so
 │       └── robot_pb2.so
 ├── camera_sdk_client_cpp    #相机sdk c++版本
-│   ├── include
-│   │   ├── camera_client.h
-│   │   ├── robot.grpc.pb.h
-│   │   └── robot.pb.h
-│   └── lib
-├── camera_sdk_client_py     #相机sdk python版本
 │   ├── CMakeLists.txt
-│   ├── demo.cpp               #示例
+│   ├── demo.cpp       #示例
 │   ├── include
 │   │   ├── camera_client.h
 │   │   ├── robot.grpc.pb.h
 │   │   └── robot.pb.h
 │   └── lib
 │       └── libcamera_client.a
-├── robot_SDK             #运动控制SDK
+├── camera_sdk_client_py     #相机sdk python版本
+│   ├── demo.py            #示例
+│   └── lib
+│       ├── camera_client.so
+│       ├── __init__.py
+│       ├── robot_pb2_grpc.so
+│       └── robot_pb2.so
+├── h1_sdk_v1.x.x_python3.xx  #运动控制SDK python版本,默认使用python3.10
+│   ├── example
+│   │   ├── h1_high_level.py
+│   │   ├── h1_low_level.py
+│   │   └── state_monitor.py
+│   └── lib
+│       └── lib_h1_sdk_python.so
+├── robot_SDK             #运动控制SDK cpp版本
 │   ├── CMakeLists.txt
 │   ├── example           #示例
 │   │   ├── h1_high_level_complex_new.cpp
@@ -64,7 +72,8 @@ H1_SDK
 │   │           ├── XboxMap.hpp
 │   │           └── ZCM_Data.hpp
 │   └── lib
-│       └── H1
-│           └── librobot_core.a
+│   │   └── H1
+│   │       └── librobot_core.a
+│   └── VERSION
 └── VERSION      #软件版本
 ```
