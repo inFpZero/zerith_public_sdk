@@ -1,5 +1,7 @@
-project(H1Examples)
 cmake_minimum_required(VERSION 3.10)
+
+project(H1Examples)
+
 set(CMAKE_CXX_STANDARD 17)
 
 # 设置头文件路径
