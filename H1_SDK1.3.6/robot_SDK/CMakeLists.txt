@@ -29,7 +29,8 @@ foreach(EXAMPLE ${EXAMPLES})
         grpc++
         protobuf
         gpr
-        absl_synchronization
+        absl_synchronization   #ubunt20需要删除该项
+        pthread
     )
 endforeach()
 
