@@ -1,0 +1,12 @@
+prefix=/workspace/third_libs/ubt20_libs/grpc_static_lib
+exec_prefix=${prefix}
+libdir=/workspace/third_libs/ubt20_libs/grpc_static_lib/lib
+includedir=/workspace/third_libs/ubt20_libs/grpc_static_lib/include
+
+Name: absl_random_internal_randen_slow
+Description: Abseil random_internal_randen_slow library
+URL: https://abseil.io/
+Version: 20220623
+Requires: absl_random_internal_platform = 20220623, absl_config = 20220623
+Libs: -L${libdir}  -labsl_random_internal_randen_slow
+Cflags: -I${includedir} -DNOMINMAX

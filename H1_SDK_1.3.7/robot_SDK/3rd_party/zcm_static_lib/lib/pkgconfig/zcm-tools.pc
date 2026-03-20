@@ -1,0 +1,10 @@
+prefix=/home/robot/third_libs/zcm_static_lib
+exec_prefix=${prefix}
+datarootdir=${prefix}/share
+jardir=${datarootdir}/java
+
+Name: zcm
+Description: Zero Communications and Marshalling (ZCM) Java Tools
+Requires:
+Version: 1.2.0
+classpath=${jardir}/zcm-tools.jar

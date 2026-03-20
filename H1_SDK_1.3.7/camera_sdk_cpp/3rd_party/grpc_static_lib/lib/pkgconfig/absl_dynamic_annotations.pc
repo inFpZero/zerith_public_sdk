@@ -1,0 +1,12 @@
+prefix=/workspace/third_libs/ubt20_libs/grpc_static_lib
+exec_prefix=${prefix}
+libdir=/workspace/third_libs/ubt20_libs/grpc_static_lib/lib
+includedir=/workspace/third_libs/ubt20_libs/grpc_static_lib/include
+
+Name: absl_dynamic_annotations
+Description: Abseil dynamic_annotations library
+URL: https://abseil.io/
+Version: 20220623
+Requires: absl_config = 20220623
+Libs: -L${libdir}  
+Cflags: -I${includedir} -DNOMINMAX

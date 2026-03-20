@@ -1,0 +1,12 @@
+prefix=/workspace/third_libs/ubt20_libs/grpc_static_lib
+exec_prefix=${prefix}
+libdir=/workspace/third_libs/ubt20_libs/grpc_static_lib/lib
+includedir=/workspace/third_libs/ubt20_libs/grpc_static_lib/include
+
+Name: absl_civil_time
+Description: Abseil civil_time library
+URL: https://abseil.io/
+Version: 20220623
+Requires:
+Libs: -L${libdir}  -labsl_civil_time
+Cflags: -I${includedir} -DNOMINMAX

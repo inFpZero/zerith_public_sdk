@@ -1,0 +1,14 @@
+prefix=/workspace/third_libs/ubt20_libs/ffmpeg_static_lib
+exec_prefix=${prefix}
+libdir=/workspace/third_libs/ubt20_libs/ffmpeg_static_lib/lib
+includedir=/workspace/third_libs/ubt20_libs/ffmpeg_static_lib/include
+
+Name: libavformat
+Description: FFmpeg container format library
+Version: 60.16.100
+Requires: libavcodec >= 60.31.102, libavutil >= 58.29.100
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lavformat -lm -latomic
+Libs.private: 
+Cflags: -I${includedir}

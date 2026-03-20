@@ -1,0 +1,13 @@
+prefix=/workspace/third_libs/ubt20_libs/grpc_static_lib
+exec_prefix=/workspace/third_libs/ubt20_libs/grpc_static_lib
+libdir=/workspace/third_libs/ubt20_libs/grpc_static_lib/lib
+sharedlibdir=/workspace/third_libs/ubt20_libs/grpc_static_lib/lib
+includedir=/workspace/third_libs/ubt20_libs/grpc_static_lib/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

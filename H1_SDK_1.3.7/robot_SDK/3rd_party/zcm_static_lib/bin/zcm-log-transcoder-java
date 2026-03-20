@@ -1,0 +1,4 @@
+#!/bin/sh
+prefix=/home/robot/third_libs/zcm_static_lib
+jars=$prefix/share/java/zcm.jar:$prefix/share/java/zcm-tools.jar
+exec java -server -Xmx64m -Xms32m -ea -cp $jars zcm.logging.Transcoder $*

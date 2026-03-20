@@ -1,0 +1,52 @@
+305080d4a4349e31ab9fb2efd490882b33ce1b41
+<no-tag>
+diff --git a/scripts/install-deps.sh b/scripts/install-deps.sh
+index e1e09c6..f587ba9 100755
+--- a/scripts/install-deps.sh
++++ b/scripts/install-deps.sh
+@@ -19,7 +19,7 @@ color_reset=`tput sgr0`
+ 
+ STRICT=true
+ SINGLE_MODE=false
+-USE_JULIA=true
++USE_JULIA=false
+ JULIA_0_6_MODE=false
+ USE_NODE=true
+ USE_PYTHON_2=false
+@@ -106,9 +106,9 @@ fi
+ 
+ [[ -z "$VIRTUAL_ENV" ]] && USER_ARG="--user" || USER_ARG=""
+ if $USE_PYTHON_2; then
+-    pip install $USER_ARG $PIP_PKGS
++    pip install  $PIP_PKGS
+ else
+-    pip3 install $USER_ARG  $PIP_PKGS
++    pip3 install  $PIP_PKGS
+ fi
+ ret=$?
+ if [[ $ret -ne 0 && "$STRICT" == "true" ]]; then
+diff --git a/zcm/wscript b/zcm/wscript
+index 1fadddd..fd8d494 100644
+--- a/zcm/wscript
++++ b/zcm/wscript
+@@ -43,6 +43,20 @@ def build(ctx):
+                                           'transport/lockfree/lf_*.c'],
+                                          excl=srcExcludes))
+ 
++                  # --- 新增：静态库配置 ---
++    ctx.stlib(target = 'zcm',
++              includes = '..',
++              export_includes = '..',
++              use = DEPS,
++              source = ctx.path.ant_glob(['*.cpp', '*.c',
++                                          'util/*.c', 'util/*.cpp',
++                                          'tools/*.c', 'tools/*.cpp',
++                                          'transport/*.c', 'transport/*.cpp',
++                                          'transport/udp/*.cpp',
++                                          'transport/lockfree/lf_*.c'],
++                                          excl=srcExcludes))
++
++
+ 
+     embedSource = ['zcm.h', 'zcm_private.h', 'zcm.c', 'zcm-cpp.hpp', 'zcm-cpp-impl.hpp',
+                    'zcm_coretypes.h', 'transport.h', 'nonblocking.h', 'nonblocking.c',
