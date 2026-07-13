@@ -1,0 +1,12 @@
+prefix=/workspace/third_libs/ubt20_libs/grpc_static_lib
+exec_prefix=${prefix}
+libdir=/workspace/third_libs/ubt20_libs/grpc_static_lib/lib
+includedir=/workspace/third_libs/ubt20_libs/grpc_static_lib/include
+
+Name: absl_random_distributions
+Description: Abseil random_distributions library
+URL: https://abseil.io/
+Version: 20220623
+Requires: absl_base_internal = 20220623, absl_config = 20220623, absl_core_headers = 20220623, absl_random_internal_generate_real = 20220623, absl_random_internal_distribution_caller = 20220623, absl_random_internal_fast_uniform_bits = 20220623, absl_random_internal_fastmath = 20220623, absl_random_internal_iostream_state_saver = 20220623, absl_random_internal_traits = 20220623, absl_random_internal_uniform_helper = 20220623, absl_random_internal_wide_multiply = 20220623, absl_strings = 20220623, absl_type_traits = 20220623
+Libs: -L${libdir}  -labsl_random_distributions
+Cflags: -I${includedir} -DNOMINMAX

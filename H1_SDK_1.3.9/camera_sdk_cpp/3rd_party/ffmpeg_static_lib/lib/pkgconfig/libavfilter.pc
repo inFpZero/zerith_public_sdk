@@ -1,0 +1,14 @@
+prefix=/workspace/third_libs/ubt20_libs/ffmpeg_static_lib
+exec_prefix=${prefix}
+libdir=/workspace/third_libs/ubt20_libs/ffmpeg_static_lib/lib
+includedir=/workspace/third_libs/ubt20_libs/ffmpeg_static_lib/include
+
+Name: libavfilter
+Description: FFmpeg audio/video filtering library
+Version: 9.12.100
+Requires: libswscale >= 7.5.100, libavformat >= 60.16.100, libavcodec >= 60.31.102, libavutil >= 58.29.100
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lavfilter -pthread -lm -latomic
+Libs.private: 
+Cflags: -I${includedir}

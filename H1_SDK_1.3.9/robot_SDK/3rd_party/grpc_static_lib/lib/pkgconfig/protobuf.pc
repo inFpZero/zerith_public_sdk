@@ -1,0 +1,11 @@
+prefix=/workspace/third_libs/ubt20_libs/grpc_static_lib
+exec_prefix=/workspace/third_libs/ubt20_libs/grpc_static_lib
+libdir=/workspace/third_libs/ubt20_libs/grpc_static_lib/lib
+includedir=/workspace/third_libs/ubt20_libs/grpc_static_lib/include
+
+Name: Protocol Buffers
+Description: Google's Data Interchange Format
+Version: 3.21.6.0
+Libs: -L${libdir} -lprotobuf -pthread
+Cflags: -I${includedir}
+Conflicts: protobuf-lite

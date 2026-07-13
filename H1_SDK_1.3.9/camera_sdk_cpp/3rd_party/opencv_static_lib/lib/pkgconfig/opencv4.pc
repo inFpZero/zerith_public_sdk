@@ -1,0 +1,13 @@
+# Package Information for pkg-config
+
+prefix=/workspace/third_libs/ubt20_libs/opencv_static_lib
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include/opencv4
+
+Name: OpenCV
+Description: Open Source Computer Vision Library
+Version: 4.6.0
+Libs: -L${exec_prefix}/lib -lopencv_gapi -lopencv_highgui -lopencv_ml -lopencv_objdetect -lopencv_photo -lopencv_stitching -lopencv_video -lopencv_calib3d -lopencv_features2d -lopencv_flann -lopencv_videoio -lopencv_imgcodecs -lopencv_imgproc -lopencv_core
+Libs.private: -L${exec_prefix}/lib/opencv4/3rdparty -lade -littnotify -llibjpeg-turbo -llibwebp -llibpng -llibopenjp2 -lzlib -lquirc -lippiw -lippicv -ldl -lm -lpthread -lrt
+Cflags: -I${includedir}

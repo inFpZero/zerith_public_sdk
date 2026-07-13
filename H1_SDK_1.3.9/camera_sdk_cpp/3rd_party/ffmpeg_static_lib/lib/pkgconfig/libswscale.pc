@@ -1,0 +1,14 @@
+prefix=/workspace/third_libs/ubt20_libs/ffmpeg_static_lib
+exec_prefix=${prefix}
+libdir=/workspace/third_libs/ubt20_libs/ffmpeg_static_lib/lib
+includedir=/workspace/third_libs/ubt20_libs/ffmpeg_static_lib/include
+
+Name: libswscale
+Description: FFmpeg image rescaling library
+Version: 7.5.100
+Requires: libavutil >= 58.29.100
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lswscale -lm -latomic
+Libs.private: 
+Cflags: -I${includedir}

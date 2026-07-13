@@ -1,0 +1,14 @@
+prefix=/workspace/third_libs/ubt20_libs/ffmpeg_static_lib
+exec_prefix=${prefix}
+libdir=/workspace/third_libs/ubt20_libs/ffmpeg_static_lib/lib
+includedir=/workspace/third_libs/ubt20_libs/ffmpeg_static_lib/include
+
+Name: libavutil
+Description: FFmpeg utility library
+Version: 58.29.100
+Requires: 
+Requires.private: 
+Conflicts:
+Libs: -L${libdir}  -lavutil -pthread -lm -latomic
+Libs.private: 
+Cflags: -I${includedir}

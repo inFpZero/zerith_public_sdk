@@ -1,0 +1,12 @@
+prefix=/workspace/third_libs/ubt20_libs/grpc_static_lib
+exec_prefix=${prefix}
+libdir=/workspace/third_libs/ubt20_libs/grpc_static_lib/lib
+includedir=/workspace/third_libs/ubt20_libs/grpc_static_lib/include
+
+Name: absl_inlined_vector_internal
+Description: Abseil inlined_vector_internal library
+URL: https://abseil.io/
+Version: 20220623
+Requires: absl_compressed_tuple = 20220623, absl_core_headers = 20220623, absl_memory = 20220623, absl_span = 20220623, absl_type_traits = 20220623
+Libs: -L${libdir}  
+Cflags: -I${includedir} -DNOMINMAX

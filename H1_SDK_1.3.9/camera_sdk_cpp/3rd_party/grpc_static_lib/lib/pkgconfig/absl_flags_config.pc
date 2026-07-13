@@ -1,0 +1,12 @@
+prefix=/workspace/third_libs/ubt20_libs/grpc_static_lib
+exec_prefix=${prefix}
+libdir=/workspace/third_libs/ubt20_libs/grpc_static_lib/lib
+includedir=/workspace/third_libs/ubt20_libs/grpc_static_lib/include
+
+Name: absl_flags_config
+Description: Abseil flags_config library
+URL: https://abseil.io/
+Version: 20220623
+Requires: absl_config = 20220623, absl_flags_path_util = 20220623, absl_flags_program_name = 20220623, absl_core_headers = 20220623, absl_strings = 20220623, absl_synchronization = 20220623
+Libs: -L${libdir}  -labsl_flags_config
+Cflags: -I${includedir} -DNOMINMAX

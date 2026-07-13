@@ -1,0 +1,6 @@
+aiortc==1.13.0
+av==14.4.0
+grpcio==1.74.0
+numpy==2.4.0
+opencv_python==4.10.0.84
+protobuf==6.33.2

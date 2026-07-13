@@ -1,0 +1,12 @@
+prefix=/workspace/third_libs/ubt20_libs/grpc_static_lib
+exec_prefix=${prefix}
+libdir=/workspace/third_libs/ubt20_libs/grpc_static_lib/lib
+includedir=/workspace/third_libs/ubt20_libs/grpc_static_lib/include
+
+Name: absl_low_level_hash
+Description: Abseil low_level_hash library
+URL: https://abseil.io/
+Version: 20220623
+Requires: absl_bits = 20220623, absl_config = 20220623, absl_endian = 20220623, absl_int128 = 20220623
+Libs: -L${libdir}  -labsl_low_level_hash
+Cflags: -I${includedir} -DNOMINMAX

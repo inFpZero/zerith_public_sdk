@@ -1,0 +1,12 @@
+prefix=/workspace/third_libs/ubt20_libs/grpc_static_lib
+exec_prefix=${prefix}
+libdir=/workspace/third_libs/ubt20_libs/grpc_static_lib/lib
+includedir=/workspace/third_libs/ubt20_libs/grpc_static_lib/include
+
+Name: absl_raw_hash_map
+Description: Abseil raw_hash_map library
+URL: https://abseil.io/
+Version: 20220623
+Requires: absl_container_memory = 20220623, absl_raw_hash_set = 20220623, absl_throw_delegate = 20220623
+Libs: -L${libdir}  
+Cflags: -I${includedir} -DNOMINMAX

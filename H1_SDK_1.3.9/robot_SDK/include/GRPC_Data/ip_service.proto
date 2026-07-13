@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package ipservice;
+
+message IpRequest {
+  string ip = 1;
+}
+
+message IpReply {
+  string result = 1;
+}
+
+service IpService {
+  rpc SendIp(IpRequest) returns (IpReply);
+}
