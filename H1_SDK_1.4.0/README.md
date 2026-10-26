@@ -1,3 +1,99 @@
+## 目录结构
+H1_SDK
+│
+├── SDKClient                         # C++ SDK 源码及用户接口
+│   ├── CMakeLists.txt                # C++ SDK 构建入口
+│   ├── README.md                     # C++ SDK 使用说明
+│   │
+│   ├── robot                         # 用户可使用的公共接口
+│   │   ├── H1_Robot.hpp             # H1Robot 单例及全部 SDK 接口
+│   │   ├── ClientTypes.hpp           # 状态、数据采集等客户端数据结构
+│   │   ├── config.hpp                # 电机、控制模式、位姿等结构和枚举
+│   │   ├── MotorStateMonitor.hpp     # 电机状态监控辅助类
+│   │   ├── log
+│   │   │   ├── log.hpp               # C++ 日志接口
+│   │   │   ├── log_stream.hpp        # 流式日志接口
+│   │   │   └── log_c.h               # C 日志接口
+│   │   └── proto
+│   │       └── camera_service.proto  # 相机状态与 WebRTC 信令协议
+│   │
+│   └── examples                      # C++ 示例
+│       ├── motion_control
+│       │   ├── h1_high_level_complex_new.cpp
+│       │   ├── h1_low_level_simple.cpp
+│       │   ├── h1_low_level_KPKD.cpp
+│       │   ├── h1_low_level_motor_limit.cpp
+│       │   └── h1_data_collection.cpp
+│       │
+│       └── camera
+│           ├── 01_minimal_color.cpp
+│           ├── 02_minimal_depth.cpp
+│           ├── 03_multi_cam_viewer.cpp
+│           ├── 04_get_full_state.cpp
+│           └── 05_full_demo.cpp
+│
+└── H1_SDK_python                    # Python 3.10 SDK
+    ├── CMakeLists.txt                # Python Bind 构建入口
+    ├── README.md
+    ├── requirements.txt
+    │
+    ├── lib                          # Python 用户导入目录
+    │   ├── lib_h1_sdk_python.cpython-310-x86_64-linux-gnu.so
+    │   ├── lib_h1_sdk_python.pyi
+    │   ├── logger.py
+    │   └── logger.pyi
+    │
+    ├── example                      # Python 示例
+    │   ├── common.py                # IP 参数与 H1Robot 单例创建
+    │   │
+    │   ├── motion_control
+    │   │   ├── h1_high_level.py
+    │   │   ├── h1_low_level.py
+    │   │   ├── h1_low_level_KPKD.py
+    │   │   ├── h1_low_level_motor_limit.py
+    │   │   ├── state_monitor.py
+    │   │   └── h1_data_collection.py
+    │   │
+    │   └── camera
+    │       ├── 01_minimal_color.py
+    │       ├── 02_minimal_depth.py
+    │       ├── 03_multi_cam_viewer.py
+    │       ├── 04_get_full_state.py
+    │       └── 05_full_demo.py
+    │
+    └── robot_sdk                    # Python Bind 使用的预编译 C++ SDK
+        ├── CMakeLists.txt
+        ├── README.md
+        ├── VERSION
+        │
+        ├── include                  # C++ 公共头文件副本
+        │   ├── H1_Robot.hpp
+        │   ├── ClientTypes.hpp
+        │   ├── config.hpp
+        │   ├── MotorStateMonitor.hpp
+        │   ├── camera_service.pb.h
+        │   ├── log.hpp
+        │   ├── log_stream.hpp
+        │   └── log_c.h
+        │
+        ├── lib                      # SDK 和 DDS/WebRTC 运行库
+        │   ├── librobot_core.a
+        │   ├── libh1_dds_interfaces.a
+        │   ├── libnexus_bus.so
+        │   ├── libfastdds.so
+        │   ├── libfastcdr.so
+        │   └── libdatachannel.so
+        │
+        ├── 3rd_party
+        │   ├── grpc_static_lib
+        │   ├── spdlog_static_lib
+        │   └── libdatachannel
+        │
+        └── examples                 # C++ 发布示例副本
+            ├── motion_control
+            └── camera
+
+
 # ZERITH H1 SDK — Ubuntu 20.04 x86_64
 
 本发布包可在解压目录内重新编译全部公开 C++ 示例和 CPython 3.10 Python
