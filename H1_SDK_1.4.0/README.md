@@ -1,4 +1,6 @@
 ## 目录结构
+
+```text
 H1_SDK
 │
 ├── SDKClient                         # C++ SDK 源码及用户接口
@@ -92,6 +94,7 @@ H1_SDK
         └── examples                 # C++ 发布示例副本
             ├── motion_control
             └── camera
+```
 
 
 # ZERITH H1 SDK — Ubuntu 20.04 x86_64
