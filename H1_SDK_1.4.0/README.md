@@ -1,100 +1,95 @@
 ## 目录结构
 
+以下与当前发布包的实际布局一致；第三方依赖和运行库仅列出主要条目。
+
 ```text
-H1_SDK
-│
-├── SDKClient                         # C++ SDK 源码及用户接口
-│   ├── CMakeLists.txt                # C++ SDK 构建入口
-│   ├── README.md                     # C++ SDK 使用说明
-│   │
-│   ├── robot                         # 用户可使用的公共接口
-│   │   ├── H1_Robot.hpp             # H1Robot 单例及全部 SDK 接口
-│   │   ├── ClientTypes.hpp           # 状态、数据采集等客户端数据结构
+H1_SDK_1.4.0/
+├── README.md                         # 发布包使用说明
+├── VERSION                           # SDK 版本信息
+├── run_python.sh                     # 自动选择 Python 3.10 并加载包内模块
+├── SDK_cpp/                          # C++ 公共头文件、预编译库及示例源码
+│   ├── CMakeLists.txt                # C++ 示例构建入口，不重新编译 SDK 核心
+│   ├── README.md                     # C++ 示例编译与运行说明
+│   ├── include/                      # C++ 公共头文件
+│   │   ├── H1_Robot.hpp             # H1Robot 单例及 SDK 接口
+│   │   ├── ClientTypes.hpp           # 客户端公共数据结构
 │   │   ├── config.hpp                # 电机、控制模式、位姿等结构和枚举
 │   │   ├── MotorStateMonitor.hpp     # 电机状态监控辅助类
-│   │   ├── log
-│   │   │   ├── log.hpp               # C++ 日志接口
-│   │   │   ├── log_stream.hpp        # 流式日志接口
-│   │   │   └── log_c.h               # C 日志接口
-│   │   └── proto
-│   │       └── camera_service.proto  # 相机状态与 WebRTC 信令协议
-│   │
-│   └── examples                      # C++ 示例
-│       ├── motion_control
-│       │   ├── h1_high_level_complex_new.cpp
-│       │   ├── h1_low_level_simple.cpp
-│       │   ├── h1_low_level_KPKD.cpp
-│       │   ├── h1_low_level_motor_limit.cpp
-│       │   └── h1_data_collection.cpp
-│       │
-│       └── camera
-│           ├── 01_minimal_color.cpp
-│           ├── 02_minimal_depth.cpp
-│           ├── 03_multi_cam_viewer.cpp
-│           ├── 04_get_full_state.cpp
-│           └── 05_full_demo.cpp
-│
-└── H1_SDK_python                    # Python 3.10 SDK
-    ├── CMakeLists.txt                # Python Bind 构建入口
-    ├── README.md
+│   │   ├── log.hpp                   # 日志接口
+│   │   ├── log_stream.hpp            # 流式日志接口
+│   │   └── robot.pb.h                # Protobuf 消息头文件
+│   ├── lib/                          # SDK 核心及依赖运行库
+│   │   └── librobot_core.so           # 闭源预编译动态核心库
+│   ├── example/                      # C++ 示例源码
+│   │   ├── common/
+│   │   │   └── example_cli.hpp       # 示例命令行参数辅助代码
+│   │   ├── motion_control/
+│   │   │   ├── h1_high_level_complex_new.cpp
+│   │   │   ├── h1_low_level_simple.cpp
+│   │   │   ├── h1_low_level_KPKD.cpp
+│   │   │   ├── h1_low_level_motor_limit.cpp
+│   │   │   ├── state_monitor.cpp
+│   │   │   └── h1_data_collection.cpp
+│   │   └── camera/
+│   │       ├── 01_minimal_color.cpp
+│   │       ├── 01_minimal_color_dds.cpp
+│   │       ├── 02_minimal_depth.cpp
+│   │       ├── 02_minimal_depth_dds.cpp
+│   │       ├── 03_multi_cam_viewer.cpp
+│   │       ├── 03_multi_cam_viewer_dds.cpp
+│   │       ├── 04_get_full_state.cpp
+│   │       ├── 04_get_full_state_dds.cpp
+│   │       ├── 05_full_demo.cpp
+│   │       └── 05_full_demo_dds.cpp
+│   └── third_party/                  # 包内第三方开发文件
+│       ├── include/                  # 第三方头文件
+│       └── opencv_shared_lib/        # 动态 OpenCV 4.6 及其 CMake 配置
+└── SDK_python/                       # CPython 3.10 Binding 及 Python 示例
+    ├── CMakeLists.txt                # Python Binding 构建入口
+    ├── README.md                     # Python SDK 使用说明
     ├── requirements.txt
-    │
-    ├── lib                          # Python 用户导入目录
+    ├── bind/                         # 可重新编译的 Python Binding 源码
+    │   ├── include/
+    │   │   └── bindings.hpp
+    │   └── src/
+    │       └── bindings.cpp
+    ├── lib/                          # 预编译 Python 扩展、类型提示及日志模块
     │   ├── lib_h1_sdk_python.cpython-310-x86_64-linux-gnu.so
     │   ├── lib_h1_sdk_python.pyi
     │   ├── logger.py
     │   └── logger.pyi
-    │
-    ├── example                      # Python 示例
+    ├── python_deps/                  # 包内 NumPy、cv2 等 Python 运行模块
+    ├── example/                      # Python 示例
+    │   ├── README.md
     │   ├── common.py                # IP 参数与 H1Robot 单例创建
-    │   │
-    │   ├── motion_control
-    │   │   ├── h1_high_level.py
-    │   │   ├── h1_low_level.py
+    │   ├── motion_control/
+    │   │   ├── h1_high_level_complex_new.py
+    │   │   ├── h1_low_level_simple.py
     │   │   ├── h1_low_level_KPKD.py
     │   │   ├── h1_low_level_motor_limit.py
     │   │   ├── state_monitor.py
     │   │   └── h1_data_collection.py
-    │   │
-    │   └── camera
+    │   └── camera/
     │       ├── 01_minimal_color.py
+    │       ├── 01_minimal_color_dds.py
     │       ├── 02_minimal_depth.py
+    │       ├── 02_minimal_depth_dds.py
     │       ├── 03_multi_cam_viewer.py
+    │       ├── 03_multi_cam_viewer_dds.py
     │       ├── 04_get_full_state.py
-    │       └── 05_full_demo.py
-    │
-    └── robot_sdk                    # Python Bind 使用的预编译 C++ SDK
-        ├── CMakeLists.txt
-        ├── README.md
-        ├── VERSION
-        │
-        ├── include                  # C++ 公共头文件副本
-        │   ├── H1_Robot.hpp
-        │   ├── ClientTypes.hpp
-        │   ├── config.hpp
-        │   ├── MotorStateMonitor.hpp
-        │   ├── camera_service.pb.h
-        │   ├── log.hpp
-        │   ├── log_stream.hpp
-        │   └── log_c.h
-        │
-        ├── lib                      # SDK 和 DDS/WebRTC 运行库
-        │   ├── librobot_core.a
-        │   ├── libh1_dds_interfaces.a
-        │   ├── libnexus_bus.so
-        │   ├── libfastdds.so
-        │   ├── libfastcdr.so
-        │   └── libdatachannel.so
-        │
-        ├── 3rd_party
-        │   ├── grpc_static_lib
-        │   ├── spdlog_static_lib
-        │   └── libdatachannel
-        │
-        └── examples                 # C++ 发布示例副本
-            ├── motion_control
-            └── camera
+    │       ├── 04_get_full_state_dds.py
+    │       ├── 05_full_demo.py
+    │       └── 05_full_demo_dds.py
+    └── third_party/                  # Binding 编译依赖及许可文件
+        ├── pybind11/
+        ├── protobuf/
+        ├── spdlog/
+        └── licenses/
 ```
+
+Python Binding 与 C++ 示例共用 `SDK_cpp` 中的公开头文件、预编译核心库和动态
+OpenCV。`SDK_cpp/build/` 和 `SDK_python/build/` 由用户编译时生成，未列入上述
+发布目录树。
 
 
 # ZERITH H1 SDK — Ubuntu 20.04 x86_64
