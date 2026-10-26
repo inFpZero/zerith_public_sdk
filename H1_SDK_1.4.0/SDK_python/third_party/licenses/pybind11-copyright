@@ -1,0 +1,123 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: pybind11
+Upstream-Contact: Wenzel Jakob <wenzel.jakob@epfl.ch>
+Source: https://github.com/pybind/pybind11
+
+Files: *
+Copyright: 2016-2019 Wenzel Jakob <wenzel.jakob@epfl.ch>
+License: BSD-3-Clause+CLA
+
+Files: debian/*
+Copyright: 2016-2017 Ghislain Antony Vaillant <ghisvail@gmail.com>
+License: BSD-3-Clause
+
+Files: include/pybind11/chrono.h
+Copyright: 2016 Trent Houliston <trent@houliston.me> and Wenzel Jakob <wenzel.jakob@epfl.ch>
+License: BSD-3-Clause+CLA
+
+Files: include/pybind11/eval.h
+Copyright: 2016 Klemens Morgenstern <klemens.morgenstern@ed-chemnitz.de> and Wenzel Jakob <wenzel.jakob@epfl.ch>
+License: BSD-3-Clause+CLA
+
+Files: include/pybind11/iostream.h
+Copyright: 2017 Henry F. Schreiner
+License: BSD-3-Clause+CLA
+
+Files: include/pybind11/stl_bind.h
+Copyright: 2016 Sergey Lyskov and Wenzel Jakob
+License: BSD-3-Clause+CLA
+
+Files: tools/FindEigen3.cmake
+Copyright: 2006-2007 Montel Laurent <montel@kde.org>
+ 2008-2009 Gael Guennebaud <g.gael@free.fr>
+ 2009 Benoit Jacob <jacob.benoit.1@gmail.com>
+License: BSD-2-Clause
+
+Files: tools/FindPythonLibsNew.cmake
+Copyright: 2001-2009 Kitware, Inc.
+ 2012 Continuum Analytics, Inc.
+License: BSD-3-Clause
+
+License: BSD-2-Clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ .
+ 1. Redistributions of source code must retain the above copyright notice, this
+ list of conditions and the following disclaimer.
+ .
+ 2. Redistributions in binary form must reproduce the above copyright notice,
+ this list of conditions and the following disclaimer in the documentation
+ and/or other materials provided with the distribution.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: BSD-3-Clause
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ .
+ 1. Redistributions of source code must retain the above copyright notice, this
+ list of conditions and the following disclaimer.
+ .
+ 2. Redistributions in binary form must reproduce the above copyright notice,
+ this list of conditions and the following disclaimer in the documentation
+ and/or other materials provided with the distribution.
+ .
+ 3. Neither the name of the copyright holder nor the names of its contributors
+ may be used to endorse or promote products derived from this software without
+ specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: BSD-3-Clause+CLA
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ .
+ 1. Redistributions of source code must retain the above copyright notice, this
+    list of conditions and the following disclaimer.
+ .
+ 2. Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+ .
+ 3. Neither the name of the copyright holder nor the names of its contributors
+    may be used to endorse or promote products derived from this software
+    without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ .
+ You are under no obligation whatsoever to provide any bug fixes, patches, or
+ upgrades to the features, functionality or performance of the source code
+ ("Enhancements") to anyone; however, if you choose to make your Enhancements
+ available either publicly, or directly to the author of this software, without
+ imposing a separate written license agreement for such Enhancements, then you
+ hereby grant the following license: a non-exclusive, royalty-free perpetual
+ license to install, use, modify, prepare derivative works, incorporate into
+ other computer software, distribute, and sublicense such enhancements or
+ derivative works thereof, in binary and source code form.
